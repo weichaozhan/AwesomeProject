@@ -8,7 +8,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, ScrollView} from 'react-native';
 
 import CP from './CP.js';
 
@@ -27,12 +27,14 @@ export default class App extends Component<Props> {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-        <CP name={'form App.js'}></CP>
-      </View>
+      <ScrollView>
+        <View style={styles.container}>
+          <Text style={styles.welcome}>Welcome to React Native!</Text>
+          <Text style={styles.instructions}>To get started, edit App.js</Text>
+          <Text style={styles.instructions}>{instructions}</Text>
+          <CP name={'from App.js 🍕'}></CP>
+        </View>
+      </ScrollView>
     );
   }
 }
