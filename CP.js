@@ -17,7 +17,6 @@ export default class CP extends Component {
 			this.setState({
 				show: !this.state.show,
 			});
-			console.log(this.state.show);
 		}, 1000);
 	}
 
@@ -31,6 +30,16 @@ export default class CP extends Component {
 		});
 	}
 
+	getAPI() {
+		fetch('http://192.168.1.144:3000/api/admin', {
+			method: 'get',
+		})
+			.then(res => {				
+				Alert.alert(res._bodyText);
+				console.log(res);
+			});
+	}
+
 	render() {
 		return (
 			<View>
@@ -38,7 +47,7 @@ export default class CP extends Component {
 					title="点我"
 					color="purple"
 					onPress={() => {
-						Alert.alert('点击了按钮');
+						this.getAPI();
 					}}
 				/>
 				<TouchableHighlight onPress={() => {
@@ -67,15 +76,15 @@ export default class CP extends Component {
 				<FlatList
 					data={[
 						{
-							key: 1,
+							key: '1',
 							name: 'a',
 						},
 						{
-							key: 2,
+							key: '2',
 							name: 'b',
 						},
 						{
-							key: 3,
+							key: '3',
 							name: 'c',
 						},
 					]}
@@ -87,15 +96,15 @@ export default class CP extends Component {
 							title: 'First',
 							data: [
 								{
-									key: 1,
+									key: 11,
 									name: 'a',
 								},
 								{
-									key: 2,
+									key: 12,
 									name: 'b',
 								},
 								{
-									key: 3,
+									key: 13,
 									name: 'c',
 								},
 							],
@@ -104,15 +113,15 @@ export default class CP extends Component {
 							title: 'Second',
 							data: [
 								{
-									key: 1,
+									key: 21,
 									name: 'a',
 								},
 								{
-									key: 2,
+									key: 22,
 									name: 'b',
 								},
 								{
-									key: 3,
+									key: 23,
 									name: 'c',
 								},
 							],
